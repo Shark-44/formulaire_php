@@ -1,0 +1,16 @@
+{
+    "name": "joanny/php_formulaire-quete1",
+    "description": "Exercice formulaire php",
+    "autoload": {
+        "psr-4": {
+            "Joanny\\PhpFormulaireQuete1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shark-44",
+            "email": "joanny.bernardeau@gmail.com"
+        }
+    ],
+    "require": {}
+}
