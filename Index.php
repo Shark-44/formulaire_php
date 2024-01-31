@@ -1,4 +1,29 @@
+<?php
+    $errors = [];
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+        if(!isset($_POST['firstname']) || trim($_POST['firstname']) === '') 
+            $errors[] = "Le prénom est obligatoire";
+        if(!isset($_POST['name']) || trim($_POST['name']) === '') 
+            $errors[] = "Le nom est obligatoire";
+        if(!isset($_POST['email']) || trim($_POST['email']) === '') 
+            $errors[] = "L'email est obligatoire";
+        if(!isset($_POST['phone']) || trim($_POST['phone']) === '') 
+            $errors[] = "Le numéro de téléphone est obligatoire";
+        if(!isset($_POST['sujets']) || trim($_POST['sujets']) === '') 
+            $errors[] = "Selectionnez un sujet";
+        if(!isset($_POST['message']) || trim($_POST['message']) === '') 
+            $errors[] = "Laissez un message";
+        if(empty($errors)) {
+            echo "je suis là avec une erreur";
+                header('Location: Thank.php');
+            } else {
+                header ('Location: Thank.php');
+            }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +33,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="/Thank.php" method="get" class="container bg-light border rounded p-5" style="margin-top: 50px;">
+    <form action="Thank.php" method="post" class="container bg-light border rounded p-5" style="margin-top: 50px;">
         <p class="row">
             <label for="name" class="form-label">Nom : </label>
             <input type="text" name="name" id="entry" class="form-control">
         </p>
         <p class="row">
-            <label for="firstName" class="form-label">Prenom : </label>
+            <label for="firstnamet" class="form-label">Prenom : </label>
             <input type="text" name="firstname" id="entry" class="form-control">
         </p>
         <p class="row">
